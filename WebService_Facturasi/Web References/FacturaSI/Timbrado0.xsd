@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://timbrado.cfdi32.pac/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="InfoCFDI">
+    <xs:sequence />
+    <xs:attribute name="UUID" type="xs:string" />
+    <xs:attribute name="folio" type="xs:string" />
+    <xs:attribute name="serie" type="xs:string" />
+    <xs:attribute name="fechaTimbrado" type="xs:string" />
+    <xs:attribute name="estado" type="xs:string" />
+  </xs:complexType>
+</xs:schema>

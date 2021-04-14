@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://main.facturasi.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="Timbrado" targetNamespace="http://main.facturasi.com/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://107.23.45.180:8181/FacturaSiStampService/Timbrado?xsd=1" namespace="http://timbrado.cfdi32.pac/" />
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://107.23.45.180:8181/FacturaSiStampService/Timbrado?xsd=2" namespace="http://main.facturasi.com/" />
+    </xsd:schema>
+  </types>
+  <message name="timbradoCFD">
+    <part name="parameters" element="tns:timbradoCFD" />
+  </message>
+  <message name="timbradoCFDResponse">
+    <part name="parameters" element="tns:timbradoCFDResponse" />
+  </message>
+  <message name="InternalException">
+    <part name="fault" element="tns:InternalException" />
+  </message>
+  <message name="LoginException">
+    <part name="fault" element="tns:LoginException" />
+  </message>
+  <message name="StampException">
+    <part name="fault" element="tns:StampException" />
+  </message>
+  <message name="UserException">
+    <part name="fault" element="tns:UserException" />
+  </message>
+  <message name="SyntaxException">
+    <part name="fault" element="tns:SyntaxException" />
+  </message>
+  <message name="validaNominas">
+    <part name="parameters" element="tns:validaNominas" />
+  </message>
+  <message name="validaNominasResponse">
+    <part name="parameters" element="tns:validaNominasResponse" />
+  </message>
+  <message name="consultaCFDIPorFolio">
+    <part name="parameters" element="tns:consultaCFDIPorFolio" />
+  </message>
+  <message name="consultaCFDIPorFolioResponse">
+    <part name="parameters" element="tns:consultaCFDIPorFolioResponse" />
+  </message>
+  <message name="CFDIException">
+    <part name="fault" element="tns:CFDIException" />
+  </message>
+  <message name="timbrado">
+    <part name="parameters" element="tns:timbrado" />
+  </message>
+  <message name="timbradoResponse">
+    <part name="parameters" element="tns:timbradoResponse" />
+  </message>
+  <message name="timbradoNominas">
+    <part name="parameters" element="tns:timbradoNominas" />
+  </message>
+  <message name="timbradoNominasResponse">
+    <part name="parameters" element="tns:timbradoNominasResponse" />
+  </message>
+  <message name="timbradoTXT">
+    <part name="parameters" element="tns:timbradoTXT" />
+  </message>
+  <message name="timbradoTXTResponse">
+    <part name="parameters" element="tns:timbradoTXTResponse" />
+  </message>
+  <message name="consultaInfoCFDIs">
+    <part name="parameters" element="tns:consultaInfoCFDIs" />
+  </message>
+  <message name="consultaInfoCFDIsResponse">
+    <part name="parameters" element="tns:consultaInfoCFDIsResponse" />
+  </message>
+  <message name="validaCFDIsHonorarios">
+    <part name="parameters" element="tns:validaCFDIsHonorarios" />
+  </message>
+  <message name="validaCFDIsHonorariosResponse">
+    <part name="parameters" element="tns:validaCFDIsHonorariosResponse" />
+  </message>
+  <message name="validaCFDIsNomina">
+    <part name="parameters" element="tns:validaCFDIsNomina" />
+  </message>
+  <message name="validaCFDIsNominaResponse">
+    <part name="parameters" element="tns:validaCFDIsNominaResponse" />
+  </message>
+  <message name="translateTXT">
+    <part name="parameters" element="tns:translateTXT" />
+  </message>
+  <message name="translateTXTResponse">
+    <part name="parameters" element="tns:translateTXTResponse" />
+  </message>
+  <message name="ValidateException">
+    <part name="fault" element="tns:ValidateException" />
+  </message>
+  <message name="cancelacion">
+    <part name="parameters" element="tns:cancelacion" />
+  </message>
+  <message name="cancelacionResponse">
+    <part name="parameters" element="tns:cancelacionResponse" />
+  </message>
+  <message name="CancelException">
+    <part name="fault" element="tns:CancelException" />
+  </message>
+  <message name="consultaCFDI">
+    <part name="parameters" element="tns:consultaCFDI" />
+  </message>
+  <message name="consultaCFDIResponse">
+    <part name="parameters" element="tns:consultaCFDIResponse" />
+  </message>
+  <portType name="Timbrado">
+    <operation name="timbradoCFD">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFDRequest" message="tns:timbradoCFD" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFDResponse" message="tns:timbradoCFDResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFD/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFD/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFD/Fault/StampException" name="StampException" message="tns:StampException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFD/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoCFD/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+    </operation>
+    <operation name="validaNominas">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/validaNominasRequest" message="tns:validaNominas" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/validaNominasResponse" message="tns:validaNominasResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaNominas/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaNominas/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaNominas/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaNominas/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+    </operation>
+    <operation name="consultaCFDIPorFolio">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolioRequest" message="tns:consultaCFDIPorFolio" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolioResponse" message="tns:consultaCFDIPorFolioResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolio/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolio/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolio/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIPorFolio/Fault/CFDIException" name="CFDIException" message="tns:CFDIException" />
+    </operation>
+    <operation name="timbrado">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/timbradoRequest" message="tns:timbrado" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/timbradoResponse" message="tns:timbradoResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbrado/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbrado/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbrado/Fault/StampException" name="StampException" message="tns:StampException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbrado/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbrado/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+    </operation>
+    <operation name="timbradoNominas">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominasRequest" message="tns:timbradoNominas" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominasResponse" message="tns:timbradoNominasResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominas/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominas/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominas/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoNominas/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+    </operation>
+    <operation name="timbradoTXT">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXTRequest" message="tns:timbradoTXT" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXTResponse" message="tns:timbradoTXTResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXT/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXT/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXT/Fault/StampException" name="StampException" message="tns:StampException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXT/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/timbradoTXT/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+    </operation>
+    <operation name="consultaInfoCFDIs">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIsRequest" message="tns:consultaInfoCFDIs" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIsResponse" message="tns:consultaInfoCFDIsResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIs/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIs/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIs/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaInfoCFDIs/Fault/CFDIException" name="CFDIException" message="tns:CFDIException" />
+    </operation>
+    <operation name="validaCFDIsHonorarios">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsHonorariosRequest" message="tns:validaCFDIsHonorarios" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsHonorariosResponse" message="tns:validaCFDIsHonorariosResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsHonorarios/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsHonorarios/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsHonorarios/Fault/UserException" name="UserException" message="tns:UserException" />
+    </operation>
+    <operation name="validaCFDIsNomina">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsNominaRequest" message="tns:validaCFDIsNomina" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsNominaResponse" message="tns:validaCFDIsNominaResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsNomina/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsNomina/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/validaCFDIsNomina/Fault/UserException" name="UserException" message="tns:UserException" />
+    </operation>
+    <operation name="translateTXT">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/translateTXTRequest" message="tns:translateTXT" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/translateTXTResponse" message="tns:translateTXTResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/translateTXT/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/translateTXT/Fault/SyntaxException" name="SyntaxException" message="tns:SyntaxException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/translateTXT/Fault/ValidateException" name="ValidateException" message="tns:ValidateException" />
+    </operation>
+    <operation name="cancelacion">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/cancelacionRequest" message="tns:cancelacion" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/cancelacionResponse" message="tns:cancelacionResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/cancelacion/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/cancelacion/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/cancelacion/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/cancelacion/Fault/CancelException" name="CancelException" message="tns:CancelException" />
+    </operation>
+    <operation name="consultaCFDI">
+      <input wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIRequest" message="tns:consultaCFDI" />
+      <output wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDIResponse" message="tns:consultaCFDIResponse" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDI/Fault/LoginException" name="LoginException" message="tns:LoginException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDI/Fault/InternalException" name="InternalException" message="tns:InternalException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDI/Fault/UserException" name="UserException" message="tns:UserException" />
+      <fault wsam:Action="http://main.facturasi.com/Timbrado/consultaCFDI/Fault/CFDIException" name="CFDIException" message="tns:CFDIException" />
+    </operation>
+  </portType>
+  <binding name="TimbradoPortBinding" type="tns:Timbrado">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="timbradoCFD">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="StampException">
+        <soap:fault use="literal" name="StampException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="validaNominas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="consultaCFDIPorFolio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="CFDIException">
+        <soap:fault use="literal" name="CFDIException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="timbrado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="StampException">
+        <soap:fault use="literal" name="StampException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="timbradoNominas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="timbradoTXT">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="StampException">
+        <soap:fault use="literal" name="StampException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="consultaInfoCFDIs">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="CFDIException">
+        <soap:fault use="literal" name="CFDIException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="validaCFDIsHonorarios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="validaCFDIsNomina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="translateTXT">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="SyntaxException">
+        <soap:fault use="literal" name="SyntaxException" namespace="" />
+      </fault>
+      <fault name="ValidateException">
+        <soap:fault use="literal" name="ValidateException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="cancelacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="CancelException">
+        <soap:fault use="literal" name="CancelException" namespace="" />
+      </fault>
+    </operation>
+    <operation name="consultaCFDI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="LoginException">
+        <soap:fault use="literal" name="LoginException" namespace="" />
+      </fault>
+      <fault name="InternalException">
+        <soap:fault use="literal" name="InternalException" namespace="" />
+      </fault>
+      <fault name="UserException">
+        <soap:fault use="literal" name="UserException" namespace="" />
+      </fault>
+      <fault name="CFDIException">
+        <soap:fault use="literal" name="CFDIException" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="Timbrado">
+    <port name="TimbradoPort" binding="tns:TimbradoPortBinding">
+      <soap:address location="https://107.23.45.180:8181/FacturaSiStampService/Timbrado" />
+    </port>
+  </service>
+</definitions>

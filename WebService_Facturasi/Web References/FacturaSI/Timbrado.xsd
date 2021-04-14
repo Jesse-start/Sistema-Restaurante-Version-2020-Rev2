@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://main.facturasi.com/" xmlns:ns1="http://timbrado.cfdi32.pac/" targetNamespace="http://main.facturasi.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://107.23.45.180:8181/FacturaSiStampService/Timbrado?xsd=1" namespace="http://timbrado.cfdi32.pac/" />
+  <xs:element name="CFDIException" type="tns:CFDIException" />
+  <xs:element name="CancelException" type="tns:CancelException" />
+  <xs:element name="InternalException" type="tns:InternalException" />
+  <xs:element name="LoginException" type="tns:LoginException" />
+  <xs:element name="StampException" type="tns:StampException" />
+  <xs:element name="SyntaxException" type="tns:SyntaxException" />
+  <xs:element name="UserException" type="tns:UserException" />
+  <xs:element name="ValidateException" type="tns:ValidateException" />
+  <xs:element name="cancelacion" type="tns:cancelacion" />
+  <xs:element name="cancelacionResponse" type="tns:cancelacionResponse" />
+  <xs:element name="consultaCFDI" type="tns:consultaCFDI" />
+  <xs:element name="consultaCFDIPorFolio" type="tns:consultaCFDIPorFolio" />
+  <xs:element name="consultaCFDIPorFolioResponse" type="tns:consultaCFDIPorFolioResponse" />
+  <xs:element name="consultaCFDIResponse" type="tns:consultaCFDIResponse" />
+  <xs:element name="consultaInfoCFDIs" type="tns:consultaInfoCFDIs" />
+  <xs:element name="consultaInfoCFDIsResponse" type="tns:consultaInfoCFDIsResponse" />
+  <xs:element name="timbrado" type="tns:timbrado" />
+  <xs:element name="timbradoCFD" type="tns:timbradoCFD" />
+  <xs:element name="timbradoCFDResponse" type="tns:timbradoCFDResponse" />
+  <xs:element name="timbradoNominas" type="tns:timbradoNominas" />
+  <xs:element name="timbradoNominasResponse" type="tns:timbradoNominasResponse" />
+  <xs:element name="timbradoResponse" type="tns:timbradoResponse" />
+  <xs:element name="timbradoTXT" type="tns:timbradoTXT" />
+  <xs:element name="timbradoTXTResponse" type="tns:timbradoTXTResponse" />
+  <xs:element name="translateTXT" type="tns:translateTXT" />
+  <xs:element name="translateTXTResponse" type="tns:translateTXTResponse" />
+  <xs:element name="validaCFDIsHonorarios" type="tns:validaCFDIsHonorarios" />
+  <xs:element name="validaCFDIsHonorariosResponse" type="tns:validaCFDIsHonorariosResponse" />
+  <xs:element name="validaCFDIsNomina" type="tns:validaCFDIsNomina" />
+  <xs:element name="validaCFDIsNominaResponse" type="tns:validaCFDIsNominaResponse" />
+  <xs:element name="validaNominas" type="tns:validaNominas" />
+  <xs:element name="validaNominasResponse" type="tns:validaNominasResponse" />
+  <xs:complexType name="timbradoNominas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="xls" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoNominasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InternalException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LoginException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UserException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SyntaxException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCFDI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCFDIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CFDIException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="translateTXT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cadenaVer" type="xs:string" />
+      <xs:element minOccurs="0" name="txt" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="translateTXTResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidateException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCFDIPorFolio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="rfc" type="xs:string" />
+      <xs:element minOccurs="0" name="folio" type="xs:string" />
+      <xs:element minOccurs="0" name="serie" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaCFDIPorFolioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoCFD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="cfd" type="xs:string" />
+      <xs:element minOccurs="0" name="passKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoCFDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StampException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="rfc" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" type="xs:string" />
+      <xs:element minOccurs="0" name="cer" type="xs:string" />
+      <xs:element minOccurs="0" name="key" type="xs:string" />
+      <xs:element minOccurs="0" name="passKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaInfoCFDIs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="rfc" type="xs:string" />
+      <xs:element minOccurs="0" name="desde" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hasta" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="consultaInfoCFDIsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:InfoCFDI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaCFDIsNomina">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaCFDIsNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:InfoCFDI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbrado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="cfdi" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaCFDIsHonorarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="uuids" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaCFDIsHonorariosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="ns1:InfoCFDI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoTXT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="txt" type="xs:string" />
+      <xs:element minOccurs="0" name="passKey" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="timbradoTXTResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaNominas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="xls" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="validaNominasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
